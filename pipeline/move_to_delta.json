@@ -17,8 +17,12 @@
 				"typeProperties": {
 					"source": {
 						"type": "CosmosDbSqlApiSource",
-						"query": "select * from c  where c.EventProcessedUtcTime >= \"2023-04-14T13\"",
-						"preferredRegions": []
+						"query": {
+							"value": "@concat('select * from c  where c.EventProcessedUtcTime >= \"', formatDateTime(addHours(pipeline().TriggerTime, -1), 'yyyy-MM-ddTHH'),'\"')",
+							"type": "Expression"
+						},
+						"preferredRegions": [],
+						"detectDatetime": true
 					},
 					"sink": {
 						"type": "AzureDatabricksDeltaLakeSink",
