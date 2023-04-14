@@ -16,17 +16,9 @@
 				"userProperties": [],
 				"typeProperties": {
 					"source": {
-						"type": "JsonSource",
-						"storeSettings": {
-							"type": "AzureBlobStorageReadSettings",
-							"recursive": true,
-							"wildcardFolderPath": "*",
-							"wildcardFileName": "*.json",
-							"enablePartitionDiscovery": false
-						},
-						"formatSettings": {
-							"type": "JsonReadSettings"
-						}
+						"type": "CosmosDbSqlApiSource",
+						"query": "select * from c  where c.EventProcessedUtcTime >= \"2023-04-14T13\"",
+						"preferredRegions": []
 					},
 					"sink": {
 						"type": "AzureDatabricksDeltaLakeSink",
@@ -68,7 +60,7 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "Json1",
+						"referenceName": "socialmoodcosmosdataset",
 						"type": "DatasetReference"
 					}
 				],

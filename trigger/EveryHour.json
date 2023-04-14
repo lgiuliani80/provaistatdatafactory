@@ -1,0 +1,24 @@
+{
+	"name": "EveryHour",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Stopped",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "move_to_delta",
+					"type": "PipelineReference"
+				}
+			}
+		],
+		"type": "ScheduleTrigger",
+		"typeProperties": {
+			"recurrence": {
+				"frequency": "Hour",
+				"interval": 1,
+				"startTime": "2023-04-14T13:56:00Z",
+				"timeZone": "UTC"
+			}
+		}
+	}
+}
