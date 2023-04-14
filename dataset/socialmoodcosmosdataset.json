@@ -1,0 +1,41 @@
+{
+	"name": "socialmoodcosmosdataset",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "SocialMoodCosmos",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "CosmosDbSqlApiCollection",
+		"schema": {
+			"type": "object",
+			"properties": {
+				"uno": {
+					"type": "integer"
+				},
+				"due": {
+					"type": "string"
+				},
+				"titolo": {
+					"type": "string"
+				},
+				"EventProcessedUtcTime": {
+					"type": "string"
+				},
+				"PartitionId": {
+					"type": "integer"
+				},
+				"EventEnqueuedUtcTime": {
+					"type": "string"
+				},
+				"campo2": {
+					"type": "number"
+				}
+			}
+		},
+		"typeProperties": {
+			"collectionName": "samplecontainer"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

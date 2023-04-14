@@ -1,0 +1,13 @@
+{
+	"name": "DataBricksService",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "AzureDatabricksDeltaLake",
+		"typeProperties": {
+			"domain": "https://adb-7151413319793144.4.azuredatabricks.net",
+			"clusterId": "0414-125024-2gsi1057",
+			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIkRBVEFGQUNUT1JZQDAxNEExRTlBLUE5QzMtNDU5NS1BNTlFLTczRjhCQjNGRDQ1N19jOGRhNzc4Ni04NzAyLTRlZmQtOTc0Ny05ODJmOGQ5NWFhZTEiDQp9"
+		}
+	}
+}

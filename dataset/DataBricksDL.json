@@ -1,0 +1,17 @@
+{
+	"name": "DataBricksDL",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "DataBricksService",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureDatabricksDeltaLakeDataset",
+		"typeProperties": {
+			"database": "default",
+			"table": "prova"
+		},
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

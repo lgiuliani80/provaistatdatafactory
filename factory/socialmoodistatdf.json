@@ -1,0 +1,9 @@
+{
+	"name": "socialmoodistatdf",
+	"location": "westeurope",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "8bdeba95-462c-4bf0-a83e-603f61c03f03",
+		"tenantId": "4b461041-4c12-46f1-a227-91498f88b3d3"
+	}
+}

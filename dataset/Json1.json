@@ -1,0 +1,40 @@
+{
+	"name": "Json1",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "staginglink",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "*",
+				"folderPath": "logs/2023/04/14",
+				"container": "contsa"
+			}
+		},
+		"schema": {
+			"type": "object",
+			"properties": {
+				"titolo": {
+					"type": "string"
+				},
+				"campo2": {
+					"type": "integer"
+				},
+				"EventProcessedUtcTime": {
+					"type": "string"
+				},
+				"PartitionId": {
+					"type": "integer"
+				},
+				"EventEnqueuedUtcTime": {
+					"type": "string"
+				}
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

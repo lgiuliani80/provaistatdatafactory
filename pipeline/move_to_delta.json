@@ -1,0 +1,87 @@
+{
+	"name": "move_to_delta",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy to delta",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "JsonSource",
+						"storeSettings": {
+							"type": "AzureBlobStorageReadSettings",
+							"recursive": true,
+							"wildcardFolderPath": "*",
+							"wildcardFileName": "*.json",
+							"enablePartitionDiscovery": false
+						},
+						"formatSettings": {
+							"type": "JsonReadSettings"
+						}
+					},
+					"sink": {
+						"type": "AzureDatabricksDeltaLakeSink",
+						"importSettings": {
+							"type": "AzureDatabricksDeltaLakeImportCommand"
+						}
+					},
+					"enableStaging": true,
+					"stagingSettings": {
+						"linkedServiceName": {
+							"referenceName": "staginglink",
+							"type": "LinkedServiceReference"
+						},
+						"path": "stage"
+					},
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"path": "$['titolo']"
+								},
+								"sink": {
+									"name": "titolo",
+									"type": "string"
+								}
+							},
+							{
+								"source": {
+									"path": "$['campo2']"
+								},
+								"sink": {
+									"name": "campo2",
+									"type": "string"
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "Json1",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "DataBricksDL",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"annotations": [],
+		"lastPublishTime": "2023-04-14T13:37:12Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}
